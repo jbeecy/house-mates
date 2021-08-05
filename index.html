@@ -12,6 +12,46 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>House Mates</h1>
+      <div>
+        <!-- sign up -->
+        <form id="sign-up" class="border">
+          <label>Email</label>
+            <input type="email" name="credentials[email]">
+          <label>Password</label>
+            <input type="password" name="credentials[password]">
+          <label>Password Confirmation</label>
+            <input type="password" name="credentials[password_confirmation">
+          <input type="submit" value="Sign Up">
+        </form>
+      </div>
+      <!-- sign in -->
+      <div>
+        <form id="sign-in" class="border">
+          <label>Email</label>
+            <input type="email" name="credentials[email]">
+          <label>Password</label>
+            <input type="password" name="credentials[password]">
+          <input type="submit" value="Sign In">
+        </form>
+      </div>
+      <div>
+        <!-- sign out -->
+        <button id="sign-out" type="button">Sign Out</button>
+      </div>
+      <div>
+        <!-- change pw -->
+        <form id="change-password" class="border">
+          <label>Old Password</label>
+            <input type="password" name="passwords[oldpw]">
+          <label>New Password</label>
+            <input type="password" name="passwords[newps]">
+          <input type="submit" value="Change Password">
+        </form>
+      </div>
+      <div>
+        <!-- this message will display User CRUD messages for success and fail -->
+        <p id="auth-message"></p>
+      </div>
     </body>
 </html>
