@@ -25,7 +25,7 @@ const onSignInSuccess = (response) => {
 // on sign in failure
 const onSignInFailure = (error) => {
   $('#auth-message').text(`Sign in failed, please create an account and make sure your credentials are correct. Error status: ${error.status}`)
-  $('#auth-message').trigger('reset')
+  $('#sign-in').trigger('reset')
 }
 
 // on sign out success
@@ -40,8 +40,17 @@ const onSignOutFailure = (error) => {
 }
 
 // on change password success
+const onChangePasswordSuccess = (response) => {
+  console.log('change password success:', response)
+  $('#auth-message').text(`Congrats, ${response.user.email}, password changed successfully`)
+  $('#change-password').trigger('reset')
+}
 
 // on change password failure
+const onChangePasswordFailure = (error) => {
+  $('#auth-message').text(`Error changing password. Error Status: ${error.status}`)
+  $('#change-password').trigger('reset')
+}
 
 // post related stuff will go here when the time comes
 
@@ -51,5 +60,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onChangePasswordSuccess,
+  onChangePasswordFailure
 }

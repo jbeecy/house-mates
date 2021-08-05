@@ -31,6 +31,16 @@ const signOut = function () {
 }
 
 // change password
+const changePassword = function (data) {
+  return $.ajax({
+    url: 'http://localhost:4741/change-password',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.userToken
+    },
+    data
+  })
+}
 
 // post crud goes below here
 
@@ -38,5 +48,6 @@ const signOut = function () {
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  changePassword
 }
