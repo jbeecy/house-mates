@@ -1,6 +1,8 @@
 // going to need to hide some of the functionalities until sign in success, place those here
 // require store so we can store user token for authentication
 const store = require('./../store')
+$('#sign-out').hide()
+$('#change-password').hide()
 
 // on sign up success
 const onSignUpSuccess = (response) => {
@@ -20,6 +22,9 @@ const onSignInSuccess = (response) => {
   $('#auth-message').text(`Welcome back, ${response.user.email}. Thank you for signing in.`)
   $('#sign-in').trigger('reset')
   $('#sign-up').hide()
+  $('#sign-out').show()
+  $('#change-password').show()
+  $('#sign-in').hide()
 }
 
 // on sign in failure
@@ -32,6 +37,9 @@ const onSignInFailure = (error) => {
 const onSignOutSuccess = () => {
   $('#auth-message').text('Come back soon!')
   $('#sign-up').show()
+  $('#sign-in').show()
+  $('#change-password').hide()
+  $('#sign-out').hide()
 }
 
 // on sign out failure
@@ -40,9 +48,9 @@ const onSignOutFailure = (error) => {
 }
 
 // on change password success
-const onChangePasswordSuccess = (response) => {
-  console.log('change password success:', response)
-  $('#auth-message').text(`Congrats, ${response.user.email}, password changed successfully`)
+const onChangePasswordSuccess = () => {
+  console.log('change password success:')
+  $('#auth-message').text('Congrats, password changed successfully')
   $('#change-password').trigger('reset')
 }
 
