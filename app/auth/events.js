@@ -40,10 +40,37 @@ const onChangePassword = function (event) {
     .catch(ui.onChangePasswordFailure)
 }
 
+// create a post
+const onCreatePost = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  JSON.stringify(data)
+  api.createPost(data)
+    .then(ui.onCreatePostSuccess)
+    .catch(ui.onCreatePostFailure)
+}
+
+// index posts
+const onIndexPosts = function (event) {
+  event.preventDefault()
+  api.indexPosts()
+    .then(ui.onIndexPostsSuccess)
+    .catch(ui.onIndexPostsFailure)
+}
+
+// show post by id
+
+// update post by id
+
+// delete post by id
+
 // module.exports
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  onCreatePost,
+  onIndexPosts
 }

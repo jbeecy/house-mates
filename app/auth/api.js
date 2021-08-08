@@ -44,10 +44,41 @@ const changePassword = function (data) {
 
 // post crud goes below here
 
+// create post
+const createPost = function (data) {
+  return $.ajax({
+    url: 'http://localhost:4741/posts',
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + store.userToken
+    },
+    data
+  })
+}
+
+// index posts
+const indexPosts = function () {
+  return $.ajax({
+    url: 'http://localhost:4741/posts',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.userToken
+    }
+  })
+}
+
+// show post by id
+
+// update post by id
+
+// delete post by id
+
 // module.exports
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  createPost,
+  indexPosts
 }

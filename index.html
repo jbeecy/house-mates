@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>House Mates</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -53,5 +53,22 @@
         <!-- this message will display User CRUD messages for success and fail -->
         <p id="auth-message"></p>
       </div>
+      <br>
+      <br>
+      <div id="forum">
+        <form id="create-post" class="border">
+          <label>Post Title</label>
+            <input type="text" name="post[title]">
+          <label>User Location</label>
+            <input type="text" name="post[location]">
+          <label>Post content</label>
+            <input type="text" name="post[body]">
+          <input type="submit" value="Create Post">
+        </form>
+      </div>
+      <button id="index-posts" type="button">Show all posts</button>
+      <!-- show post by id form -->
+      <!-- update post by id form -->
+      <!-- delete post by id form -->
     </body>
 </html>

@@ -3,6 +3,8 @@
 const store = require('./../store')
 $('#sign-out').hide()
 $('#change-password').hide()
+$('#forum').hide()
+$('#index-posts').hide()
 
 // on sign up success
 const onSignUpSuccess = (response) => {
@@ -19,12 +21,15 @@ const onSignUpFailure = (error) => {
 // on sign in success
 const onSignInSuccess = (response) => {
   store.userToken = response.user.token
+  console.log(store.userToken)
   $('#auth-message').text(`Welcome back, ${response.user.email}. Thank you for signing in.`)
   $('#sign-in').trigger('reset')
   $('#sign-up').hide()
   $('#sign-out').show()
   $('#change-password').show()
   $('#sign-in').hide()
+  $('#forum').show()
+  $('#index-posts').show()
 }
 
 // on sign in failure
@@ -40,6 +45,8 @@ const onSignOutSuccess = () => {
   $('#sign-in').show()
   $('#change-password').hide()
   $('#sign-out').hide()
+  $('#forum').hide()
+  $('#index-posts').hide()
 }
 
 // on sign out failure
@@ -62,6 +69,41 @@ const onChangePasswordFailure = (error) => {
 
 // post related stuff will go here when the time comes
 
+// on create post success
+const onCreatePostSuccess = (response) => {
+  store.postId = response.body.id
+  $('#auth-message').text(`Post created with post ID ${response.body.id}, keep this if you want to update or delete your post.`)
+  $('#create-post').trigger('reset')
+}
+
+// on create post failure
+const onCreatePostFailure = () => {
+  $('#auth-message').text('There was an error creating the post.')
+  $('#create-post').trigger('reset')
+}
+
+// on index posts success
+const onIndexPostsSuccess = () => {
+  $('#auth-message').text('Now viewing all posts')
+}
+
+// on index posts failure
+const onIndexPostsFailure = () => {
+  $('#auth-message').text('problem getting posts')
+}
+
+// show post by id success
+
+// show post by id failure
+
+// update post by id success
+
+// update post by id failure
+
+// delete post by id success
+
+// delete post by id failure
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -70,5 +112,9 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure
+  onChangePasswordFailure,
+  onCreatePostSuccess,
+  onCreatePostFailure,
+  onIndexPostsSuccess,
+  onIndexPostsFailure
 }
