@@ -4,7 +4,7 @@ const store = require('./../store')
 // sign up
 const signUp = function (data) {
   return $.ajax({
-    url: 'http://localhost:4741/sign-up',
+    url: 'https://still-refuge-85955.herokuapp.com/sign-up',
     method: 'POST',
     data
   })
@@ -13,7 +13,7 @@ const signUp = function (data) {
 // sign in
 const signIn = function (data) {
   return $.ajax({
-    url: 'http://localhost:4741/sign-in',
+    url: 'https://still-refuge-85955.herokuapp.com/sign-in',
     method: 'POST',
     data
   })
@@ -22,7 +22,7 @@ const signIn = function (data) {
 // sign out
 const signOut = function () {
   return $.ajax({
-    url: 'http://localhost:4741/sign-out',
+    url: 'https://still-refuge-85955.herokuapp.com/sign-out',
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.userToken
@@ -33,7 +33,7 @@ const signOut = function () {
 // change password
 const changePassword = function (data) {
   return $.ajax({
-    url: 'http://localhost:4741/change-password',
+    url: 'https://still-refuge-85955.herokuapp.com/change-password',
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.userToken
@@ -47,7 +47,7 @@ const changePassword = function (data) {
 // create post
 const createPost = function (data) {
   return $.ajax({
-    url: 'http://localhost:4741/posts',
+    url: 'https://still-refuge-85955.herokuapp.com/posts',
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.userToken
@@ -59,7 +59,7 @@ const createPost = function (data) {
 // index posts
 const indexPosts = function () {
   return $.ajax({
-    url: 'http://localhost:4741/posts',
+    url: 'https://still-refuge-85955.herokuapp.com/posts',
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.userToken
