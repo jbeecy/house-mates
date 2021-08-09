@@ -25,7 +25,6 @@ const onSignUpFailure = (error) => {
 // on sign in success
 const onSignInSuccess = (response) => {
   store.userToken = response.user.token
-  console.log(store.userToken)
   $('#auth-message').text(`Welcome back, ${response.user.email}. Thank you for signing in.`)
   $('#sign-in').trigger('reset')
   $('#sign-up').hide()
@@ -71,7 +70,6 @@ const onSignOutFailure = (error) => {
 
 // on change password success
 const onChangePasswordSuccess = () => {
-  console.log('change password success:')
   $('#auth-message').text('Congrats, password changed successfully')
   $('#change-password').trigger('reset')
 }
@@ -108,7 +106,6 @@ const onIndexPostsSuccess = (response) => {
     <p>${post.body}</p>
     `
   })
-  console.log(postHTML)
   $('#post-forum').show()
   $('#post-forum').html(postHTML)
   $('#auth-message').text('Now viewing all posts')
