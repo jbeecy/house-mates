@@ -99,15 +99,16 @@ const onCreatePostFailure = () => {
 
 // on index posts success
 const onIndexPostsSuccess = (response) => {
-  const post = response.posts
-  let postHTML
-  post.forEach(post => {
+  const posts = response.posts
+  let postHTML = ''
+  posts.forEach(post => {
     postHTML += `
     <h4>${post.title}</h4>
     <h6>${post.location}</h6>
     <p>${post.body}</p>
     `
   })
+  console.log(postHTML)
   $('#post-forum').show()
   $('#post-forum').html(postHTML)
   $('#auth-message').text('Now viewing all posts')
@@ -119,27 +120,27 @@ const onIndexPostsFailure = () => {
 }
 
 // show post by id success
-const onShowPostSuccess = (response) => {
-  const post = response.posts
-  // const postId = response.posts.id
-  let searchedPostHTML
-  post.findById(post => {
-    searchedPostHTML += `
-    <h4>${post.title}</h4>
-    <h6>${post.location}</h6>
-    <p>${post.body}</p>
-    `
-  })
-  $('#post-forum').html(searchedPostHTML)
-  $('#auth-message').text('Showing selected post.')
-  $('#show-post').trigger('reset')
-}
+// const onShowPostSuccess = (response) => {
+//   const post = response.posts
+//   // const postId = response.posts.id
+//   let searchedPostHTML
+//   post.forEach(post => {
+//     searchedPostHTML += `
+//     <h4>${post.title}</h4>
+//     <h6>${post.location}</h6>
+//     <p>${post.body}</p>
+//     `
+//   })
+//   $('#post-forum').html(searchedPostHTML)
+//   $('#auth-message').text('Showing selected post.')
+//   $('#show-post').trigger('reset')
+// }
 
-// show post by id failure
-const onShowPostFailure = () => {
-  $('#auth-message').text('Problem finding post, make sure the ID is correct.')
-  $('#show-post').trigger('reset')
-}
+// // show post by id failure
+// const onShowPostFailure = () => {
+//   $('#auth-message').text('Problem finding post, make sure the ID is correct.')
+//   $('#show-post').trigger('reset')
+// }
 
 // update post by id success
 const onUpdatePostSuccess = () => {
@@ -176,8 +177,8 @@ module.exports = {
   onCreatePostFailure,
   onIndexPostsSuccess,
   onIndexPostsFailure,
-  onShowPostSuccess,
-  onShowPostFailure,
+  // onShowPostSuccess,
+  // onShowPostFailure,
   onUpdatePostSuccess,
   onUpdatePostFailure,
   onDeletePostSuccess,

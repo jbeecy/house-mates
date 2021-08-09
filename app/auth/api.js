@@ -68,15 +68,15 @@ const indexPosts = function () {
 }
 
 // show post by id
-const showPost = function (data) {
-  return $.ajax({
-    url: 'http://localhost:4741/posts/' + data.post.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + store.userToken
-    }
-  })
-}
+// const showPost = function (data) {
+//   return $.ajax({
+//     url: 'http://localhost:4741/posts/' + data.post.id,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Bearer ' + store.userToken
+//     }
+//   })
+// }
 
 // update post by id
 const updatePost = function (data) {
@@ -109,7 +109,7 @@ module.exports = {
   changePassword,
   createPost,
   indexPosts,
-  showPost,
+  // showPost,
   updatePost,
   deletePost
 }
