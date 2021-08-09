@@ -160,7 +160,7 @@ const onDeletePostSuccess = () => {
 
 // delete post by id failure
 const onDeletePostFailure = () => {
-  $('#auth-message').text('Error deleting post, make sure you gave it the right postId.')
+  $('#auth-message').text('Error deleting post, make sure you gave it the right postId. If you are not the owner of the post, this will not work.')
 }
 
 module.exports = {
