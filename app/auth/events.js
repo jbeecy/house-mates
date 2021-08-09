@@ -81,6 +81,12 @@ const onUpdatePost = function (event) {
 }
 
 // delete post by id
+const onDeletePost = function (event) {
+  event.preventDefault()
+  api.deletePost()
+    .then(ui.onDeletePostSuccess)
+    .catch(ui.onDeletePostFailure)
+}
 
 // module.exports
 module.exports = {
@@ -91,5 +97,6 @@ module.exports = {
   onCreatePost,
   onIndexPosts,
   onShowPost,
-  onUpdatePost
+  onUpdatePost,
+  onDeletePost
 }

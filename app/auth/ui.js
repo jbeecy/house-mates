@@ -7,6 +7,8 @@ $('#forum').hide()
 $('#index-posts').hide()
 $('#show-post').hide()
 $('#update-post').hide()
+$('#post-forum').hide()
+$('#delete-post').hide()
 
 // on sign up success
 const onSignUpSuccess = (response) => {
@@ -34,6 +36,7 @@ const onSignInSuccess = (response) => {
   $('#index-posts').show()
   $('#show-post').show()
   $('#update-post').show()
+  $('#delete-post').show()
 }
 
 // on sign in failure
@@ -56,6 +59,9 @@ const onSignOutSuccess = () => {
   $('#show-post').trigger('reset')
   $('#update-post').hide()
   $('#update-post').trigger('reset')
+  $('#post-forum').hide()
+  $('#delete-post').hide()
+  $('#delete-post').trigger('reset')
 }
 
 // on sign out failure
@@ -80,7 +86,7 @@ const onChangePasswordFailure = (error) => {
 
 // on create post success
 const onCreatePostSuccess = (response) => {
-  store.postId = response.post.id
+  store.postId = response.post._id
   $('#auth-message').text(`Post created with post ID ${response.post._id}, keep this if you want to update or delete your post.`)
   $('#create-post').trigger('reset')
 }
@@ -102,6 +108,7 @@ const onIndexPostsSuccess = (response) => {
     <p>${post.body}</p>
     `
   })
+  $('#post-forum').show()
   $('#post-forum').html(postHTML)
   $('#auth-message').text('Now viewing all posts')
 }
@@ -114,8 +121,9 @@ const onIndexPostsFailure = () => {
 // show post by id success
 const onShowPostSuccess = (response) => {
   const post = response.posts
+  // const postId = response.posts.id
   let searchedPostHTML
-  post.show(post => {
+  post.findById(post => {
     searchedPostHTML += `
     <h4>${post.title}</h4>
     <h6>${post.location}</h6>
@@ -135,18 +143,25 @@ const onShowPostFailure = () => {
 
 // update post by id success
 const onUpdatePostSuccess = () => {
-  $('#auth-message').text('Post updated successfully')
+  $('#auth-message').text('Post updated successfully, click the Show All Posts button to view the updated post.')
   $('#update-post').trigger('reset')
 }
 
 // update post by id failure
 const onUpdatePostFailure = () => {
-  $('#auth-message').text('Failed to update post, make sure the post ID is correct.')
+  $('#auth-message').text('Failed to update post, make sure the post ID is correct. This is not going to work if you are not the owner of the post.')
 }
 
 // delete post by id success
+const onDeletePostSuccess = () => {
+  $('#auth-message').text('Post deleted, clock show all posts and you will see it is gone.')
+  $('#delete-post').trigger('reset')
+}
 
 // delete post by id failure
+const onDeletePostFailure = () => {
+  $('#auth-message').text('Error deleting post, make sure you gave it the right postId.')
+}
 
 module.exports = {
   onSignUpSuccess,
@@ -164,5 +179,7 @@ module.exports = {
   onShowPostSuccess,
   onShowPostFailure,
   onUpdatePostSuccess,
-  onUpdatePostFailure
+  onUpdatePostFailure,
+  onDeletePostSuccess,
+  onDeletePostFailure
 }

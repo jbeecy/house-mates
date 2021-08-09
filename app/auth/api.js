@@ -68,9 +68,9 @@ const indexPosts = function () {
 }
 
 // show post by id
-const showPost = function () {
+const showPost = function (data) {
   return $.ajax({
-    url: 'http://localhost:4741/posts',
+    url: 'http://localhost:4741/posts/' + data.post.id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.userToken
@@ -81,7 +81,7 @@ const showPost = function () {
 // update post by id
 const updatePost = function (data) {
   return $.ajax({
-    url: 'http://localhost:4741/posts',
+    url: 'http://localhost:4741/posts/' + data.post.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.userToken
@@ -91,6 +91,15 @@ const updatePost = function (data) {
 }
 
 // delete post by id
+const deletePost = function () {
+  return $.ajax({
+    url: 'http://localhost:4741/posts/',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.userToken
+    }
+  })
+}
 
 // module.exports
 module.exports = {
@@ -101,5 +110,6 @@ module.exports = {
   createPost,
   indexPosts,
   showPost,
-  updatePost
+  updatePost,
+  deletePost
 }

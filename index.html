@@ -85,7 +85,7 @@
       <div>
         <form id="update-post" class="border">
           <label>Post ID</label>
-            <input type="text" name="post[_id]">
+            <input type="text" name="post[id]">
           <label>New Title</label>
             <input type="text" name="post[title]">
           <label>Updated Location</label>
@@ -99,7 +99,11 @@
       <br>
       <!-- delete post by id form -->
       <div>
-
+        <form id="delete-post" class="border">
+          <label>Post ID</label>
+            <input type="text" name="post[id]">
+          <input type="submit" value="Delete Post">
+        </form>
       </div>
       <br>
       <div id="post-forum" class="border">
