@@ -83,7 +83,9 @@ const onUpdatePost = function (event) {
 // delete post by id
 const onDeletePost = function (event) {
   event.preventDefault()
-  api.deletePost()
+  const form = event.target
+  const data = getFormFields(form)
+  api.deletePost(data)
     .then(ui.onDeletePostSuccess)
     .catch(ui.onDeletePostFailure)
 }

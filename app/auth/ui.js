@@ -154,7 +154,7 @@ const onUpdatePostFailure = () => {
 
 // delete post by id success
 const onDeletePostSuccess = () => {
-  $('#auth-message').text('Post deleted, clock show all posts and you will see it is gone.')
+  $('#auth-message').text('Post deleted, click show all posts and you will see it is gone.')
   $('#delete-post').trigger('reset')
 }
 

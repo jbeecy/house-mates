@@ -91,9 +91,9 @@ const updatePost = function (data) {
 }
 
 // delete post by id
-const deletePost = function () {
+const deletePost = function (data) {
   return $.ajax({
-    url: 'http://localhost:4741/posts/',
+    url: 'http://localhost:4741/posts/' + data.post.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.userToken
