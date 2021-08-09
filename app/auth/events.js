@@ -60,8 +60,25 @@ const onIndexPosts = function (event) {
 }
 
 // show post by id
+const onShowPost = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.showPost(data)
+    .then(ui.onShowPostSuccess)
+    .catch(ui.onShowPostFailure)
+}
 
 // update post by id
+const onUpdatePost = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  JSON.stringify(data)
+  api.updatePost(data)
+    .then(ui.onUpdatePostSuccess)
+    .catch(ui.onUpdatePostFailure)
+}
 
 // delete post by id
 
@@ -72,5 +89,7 @@ module.exports = {
   onSignOut,
   onChangePassword,
   onCreatePost,
-  onIndexPosts
+  onIndexPosts,
+  onShowPost,
+  onUpdatePost
 }

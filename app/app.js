@@ -11,4 +11,6 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#create-post').on('submit', authEvents.onCreatePost)
   $('#index-posts').on('click', authEvents.onIndexPosts)
+  $('#show-post').on('submit', authEvents.onShowPost)
+  $('#update-post').on('submit', authEvents.onUpdatePost)
 })

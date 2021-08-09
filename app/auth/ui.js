@@ -5,6 +5,8 @@ $('#sign-out').hide()
 $('#change-password').hide()
 $('#forum').hide()
 $('#index-posts').hide()
+$('#show-post').hide()
+$('#update-post').hide()
 
 // on sign up success
 const onSignUpSuccess = (response) => {
@@ -30,6 +32,8 @@ const onSignInSuccess = (response) => {
   $('#sign-in').hide()
   $('#forum').show()
   $('#index-posts').show()
+  $('#show-post').show()
+  $('#update-post').show()
 }
 
 // on sign in failure
@@ -47,6 +51,11 @@ const onSignOutSuccess = () => {
   $('#sign-out').hide()
   $('#forum').hide()
   $('#index-posts').hide()
+  $('#create-post').trigger('reset')
+  $('#show-post').hide()
+  $('#show-post').trigger('reset')
+  $('#update-post').hide()
+  $('#update-post').trigger('reset')
 }
 
 // on sign out failure
@@ -71,8 +80,8 @@ const onChangePasswordFailure = (error) => {
 
 // on create post success
 const onCreatePostSuccess = (response) => {
-  store.postId = response.body.id
-  $('#auth-message').text(`Post created with post ID ${response.body.id}, keep this if you want to update or delete your post.`)
+  store.postId = response.post.id
+  $('#auth-message').text(`Post created with post ID ${response.post._id}, keep this if you want to update or delete your post.`)
   $('#create-post').trigger('reset')
 }
 
@@ -83,7 +92,17 @@ const onCreatePostFailure = () => {
 }
 
 // on index posts success
-const onIndexPostsSuccess = () => {
+const onIndexPostsSuccess = (response) => {
+  const post = response.posts
+  let postHTML
+  post.forEach(post => {
+    postHTML += `
+    <h4>${post.title}</h4>
+    <h6>${post.location}</h6>
+    <p>${post.body}</p>
+    `
+  })
+  $('#post-forum').html(postHTML)
   $('#auth-message').text('Now viewing all posts')
 }
 
@@ -93,12 +112,37 @@ const onIndexPostsFailure = () => {
 }
 
 // show post by id success
+const onShowPostSuccess = (response) => {
+  const post = response.posts
+  let searchedPostHTML
+  post.show(post => {
+    searchedPostHTML += `
+    <h4>${post.title}</h4>
+    <h6>${post.location}</h6>
+    <p>${post.body}</p>
+    `
+  })
+  $('#post-forum').html(searchedPostHTML)
+  $('#auth-message').text('Showing selected post.')
+  $('#show-post').trigger('reset')
+}
 
 // show post by id failure
+const onShowPostFailure = () => {
+  $('#auth-message').text('Problem finding post, make sure the ID is correct.')
+  $('#show-post').trigger('reset')
+}
 
 // update post by id success
+const onUpdatePostSuccess = () => {
+  $('#auth-message').text('Post updated successfully')
+  $('#update-post').trigger('reset')
+}
 
 // update post by id failure
+const onUpdatePostFailure = () => {
+  $('#auth-message').text('Failed to update post, make sure the post ID is correct.')
+}
 
 // delete post by id success
 
@@ -116,5 +160,9 @@ module.exports = {
   onCreatePostSuccess,
   onCreatePostFailure,
   onIndexPostsSuccess,
-  onIndexPostsFailure
+  onIndexPostsFailure,
+  onShowPostSuccess,
+  onShowPostFailure,
+  onUpdatePostSuccess,
+  onUpdatePostFailure
 }
