@@ -37,7 +37,9 @@ I got the idea for creating an application like House Mates a long time ago work
 - User will be able to create posts
 - User will be able to update posts (only theirs)
 - User will be able to delete posts (only theirs)
+
 Stretch user stories:
+
 - User will be able to pin posts
 - User will be able to comment on posts
 - User will be able to filter posts by general location
