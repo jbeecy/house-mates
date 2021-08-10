@@ -26,6 +26,8 @@ I got the idea for creating an application like House Mates a long time ago work
 
 ## Wireframe
 
+![Wireframe image](https://media.git.generalassemb.ly/user/37148/files/35238980-f9cf-11eb-876e-a06a8f70835f)
+
 ## User Stories
 -User will be able to sign up
 -User will be able to sign in
