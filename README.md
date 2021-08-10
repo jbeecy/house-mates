@@ -45,3 +45,19 @@ Stretch user stories:
 - User will be able to filter posts by general location
 - User will be able to view other profiles (not making any changes just viewing)
 
+## Technologies Used
+
+- jQuery
+- Bootstrap
+- HTML/CSS
+- JavaScript
+- Express API
+- MongoDB
+
+## Unsolved Problems
+
+- I still need to get show for a single resource working.
+- I would like to get version 2 going, where users will be able to dynamically update posts and delete posts without punching in the post IDs.
+- I would like users to be able to filter by location, and have location be selected from a drop down menu or from a map view/with zip code.
+- I would like users to be able to modify their profile and display a profile picture with identity verification.
+- I would like users to be able to pin posts or comment on posts, and eventually be able to private message a poster.
