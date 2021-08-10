@@ -61,6 +61,7 @@ const onSignOutSuccess = () => {
   $('#post-forum').hide()
   $('#delete-post').hide()
   $('#delete-post').trigger('reset')
+  $('#change-password').trigger('reset')
 }
 
 // on sign out failure
