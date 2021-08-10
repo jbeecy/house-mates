@@ -81,8 +81,9 @@ const indexPosts = function () {
 
 // update post by id
 const updatePost = function (data) {
+  console.log(data)
   return $.ajax({
-    url: 'https://still-refuge-85955.herokuapp.com/' + data.post.id,
+    url: 'https://still-refuge-85955.herokuapp.com/posts/' + data.post.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.userToken
