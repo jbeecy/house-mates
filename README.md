@@ -29,17 +29,17 @@ I got the idea for creating an application like House Mates a long time ago work
 ![Wireframe image](https://media.git.generalassemb.ly/user/37148/files/35238980-f9cf-11eb-876e-a06a8f70835f)
 
 ## User Stories
--User will be able to sign up
--User will be able to sign in
--User will be able to sign out after successful sign in
--User will be able to change password only when signed in
--User will be able to view posts
--User will be able to create posts
--User will be able to update posts (only theirs)
--User will be able to delete posts (only theirs)
+- User will be able to sign up
+- User will be able to sign in
+- User will be able to sign out after successful sign in
+- User will be able to change password only when signed in
+- User will be able to view posts
+- User will be able to create posts
+- User will be able to update posts (only theirs)
+- User will be able to delete posts (only theirs)
 Stretch user stories:
--User will be able to pin posts
--User will be able to comment on posts
--User will be able to filter posts by general location
--User will be able to view other profiles (not making any changes just viewing)
+- User will be able to pin posts
+- User will be able to comment on posts
+- User will be able to filter posts by general location
+- User will be able to view other profiles (not making any changes just viewing)
 
