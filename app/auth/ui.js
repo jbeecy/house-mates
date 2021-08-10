@@ -105,6 +105,7 @@ const onIndexPostsSuccess = (response) => {
     <h4>${post.title}</h4>
     <h6>${post.location}</h6>
     <p>${post.body}</p>
+    <p>Post ID: ${post._id}</p>
     `
   })
   $('#post-forum').show()
