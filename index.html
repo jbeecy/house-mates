@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1><img src="housemates logo.png" class="logo"></h1>
+      <h1><img src="https://github.com/jbeecy/house-mates/housemates logo.png" class="logo"></h1>
       <div>
         <!-- sign up -->
         <form id="sign-up" class="border">
@@ -25,6 +25,7 @@
           <input type="submit" value="Sign Up" class="btn btn-primary">
         </form>
       </div>
+      <br>
       <!-- sign in -->
       <div>
         <form id="sign-in" class="border">
@@ -58,17 +59,17 @@
       <div id="forum">
         <form id="create-post" class="border">
           <label>Post Title</label>
-            <input type="text" name="post[title]">
+            <input type="text" name="post[title]" placeholder="Title">
           <label>User Location</label>
-            <input type="text" name="post[location]">
+            <input type="text" name="post[location]" placeholder="Location">
           <label>Post content</label>
-            <input class="body-input" type="text" name="post[body]">
-          <input type="submit" value="Create Post">
+            <input class="body-input" type="text" name="post[body]" placeholder="Post Content">
+          <input type="submit" value="Create Post" class="btn btn-primary">
         </form>
       </div>
       <br>
       <br>
-      <button id="index-posts" type="button">Show all posts</button>
+      <button id="index-posts" type="button" class="btn btn-primary">Show all posts</button>
       <br>
       <br>
       <!-- show post by id form -->
@@ -85,14 +86,14 @@
       <div>
         <form id="update-post" class="border">
           <label>Post ID</label>
-            <input type="text" name="post[id]">
+            <input type="text" name="post[id]" placeholder="Post ID">
           <label>New Title</label>
-            <input type="text" name="post[title]">
+            <input type="text" name="post[title]" placeholder="New Title">
           <label>Updated Location</label>
-            <input type="text" name="post[location]">
+            <input type="text" name="post[location]" placeholder="Updated Location">
           <label>Updated Body</label>
-            <input class="body-input" type="text" name="post[body]">
-          <input type="submit" value="Update Post">
+            <input class="body-input" type="text" name="post[body]" placeholder="Updated Contents">
+          <input type="submit" value="Update Post" class="btn btn-primary">
         </form>
       </div>
       <br>
@@ -101,8 +102,8 @@
       <div>
         <form id="delete-post" class="border">
           <label>Post ID</label>
-            <input type="text" name="post[id]">
-          <input type="submit" value="Delete Post">
+            <input type="text" name="post[id]" placeholder="Post ID">
+          <input type="submit" value="Delete Post" class="btn btn-primary">
         </form>
       </div>
       <br>
