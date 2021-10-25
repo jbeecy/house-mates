@@ -106,6 +106,10 @@ const onIndexPostsSuccess = (response) => {
       <h6>${post.location}</h6>
       <p>${post.body}</p>
       <p>Post ID: ${post._id}</p>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Update Post</button>
+        <button type="button" class="btn btn-secondary">Delete Post</button>
+      </div>
     `
   })
   $('#post-forum').show()
