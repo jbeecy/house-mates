@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>House Mates</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1><img src="https://jbeecy.github.io/house-mates/housemates-logo.png" class="logo"></h1>
+      <div>
+        <!-- sign up -->
+        <form id="sign-up" class="border">
+          <label>Email</label>
+            <input type="email" name="credentials[email]" placeholder="email@example.com">
+          <label>Password</label>
+            <input type="password" name="credentials[password]" placeholder="Your Password">
+          <label>Password Confirmation</label>
+            <input type="password" name="credentials[password_confirmation" placeholder="Your Password">
+          <input type="submit" value="Sign Up" class="btn btn-primary">
+        </form>
+      </div>
+      <br>
+      <!-- sign in -->
+      <div>
+        <form id="sign-in" class="border">
+          <label>Email</label>
+            <input type="email" name="credentials[email]" placeholder="email@example.com">
+          <label>Password</label>
+            <input type="password" name="credentials[password]" placeholder="Your Password">
+          <input type="submit" value="Sign In" class="btn btn-primary">
+        </form>
+      </div>
+      <div>
+        <!-- sign out -->
+        <button id="sign-out" type="button" class="btn btn-primary">Sign Out</button>
+      </div>
+      <div>
+        <!-- change pw -->
+        <form id="change-password" class="border">
+          <label>Old Password</label>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+          <label>New Password</label>
+            <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" value="Change Password" class="btn btn-primary">
+        </form>
+      </div>
+      <div>
+        <!-- this message will display User CRUD messages for success and fail -->
+        <p id="auth-message"></p>
+      </div>
+      <br>
+      <br>
+      <div id="forum">
+        <form id="create-post" class="border">
+          <label>Post Title</label>
+            <input type="text" name="post[title]" placeholder="Title">
+          <label>User Location</label>
+            <input type="text" name="post[location]" placeholder="Location">
+          <label>Post content</label>
+            <input rows="2" class="body-input" type="text" name="post[body]" placeholder="Post Content">
+          <input type="submit" value="Create Post" class="btn btn-primary">
+        </form>
+      </div>
+      <br>
+      <br>
+      <button id="index-posts" type="button" class="btn btn-primary">Show all posts</button>
+      <br>
+      <br>
+      <!-- show post by id form -->
+      <!-- <div>
+        <form id="show-post" class="border">
+          <label>Post ID</label>
+            <input type="text" name="post[id]">
+          <input type="submit" value="Find Post">
+        </form>
+      </div>
+      <br>
+      <br> -->
+      <!-- update post by id form -->
+      <div>
+        <form id="update-post" class="border">
+          <label>Post ID</label>
+            <input type="text" name="post[id]" placeholder="Post ID">
+          <label>New Title</label>
+            <input type="text" name="post[title]" placeholder="New Title">
+          <label>Updated Location</label>
+            <input type="text" name="post[location]" placeholder="Updated Location">
+          <label>Updated Body</label>
+            <input rows="2" class="body-input" type="text" name="post[body]" placeholder="Updated Contents">
+          <input type="submit" value="Update Post" class="btn btn-primary">
+        </form>
+      </div>
+      <br>
+      <br>
+      <!-- delete post by id form -->
+      <div>
+        <form id="delete-post" class="border">
+          <label>Post ID</label>
+            <input type="text" name="post[id]" placeholder="Post ID">
+          <input type="submit" value="Delete Post" class="btn btn-primary">
+        </form>
+      </div>
+      <br>
+      <div id="post-forum" class="border">
+      </div>
+    </body>
+</html>
