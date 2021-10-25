@@ -108,7 +108,7 @@ const onIndexPostsSuccess = (response) => {
       <p>Post ID: ${post._id}</p>
       <div class="btn-group" role="group" aria-label="Basic example">
         <button type="button" class="btn btn-secondary">Update Post</button>
-        <button type="button" class="btn btn-secondary">Delete Post</button>
+        <button type="button" class="btn btn-secondary" id="delete">Delete Post</button>
       </div>
     `
   })
